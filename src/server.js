@@ -6,8 +6,12 @@ const jsonHandler = require('./jsonResponses.js');
 
 const port = process.env.PORT || process.env.NODE_PORT || 3000;
 
+//added route to get for our ES5 JS bundle. 
+//This bundle will be created by our babel 
+// watch/build scripts in package.json
 const urlStruct = {
   '/': htmlHandler.getIndex,
+  '/bundle.js': htmlHandler.getBundle,
   '/success': jsonHandler.success,
   '/badRequest': jsonHandler.badRequest,
   notFound: jsonHandler.notFound,
